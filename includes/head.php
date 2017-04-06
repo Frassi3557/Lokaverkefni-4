@@ -1,13 +1,16 @@
 <?php 
   $title = basename($_SERVER['SCRIPT_FILENAME'], '.php');
+  $icon = "http://www.tskoli.is/skin/basic9k/i/fav-large.png";
   if ($title == 'index') {
-    $title = 'home';
+    $title = 'Innskráning';
+    $icon = "https://cdn3.iconfinder.com/data/icons/glypho-free/64/home-128.png";
   }
   $title = ucfirst($title);
 ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokaverkefni</title>
+    <title><?php echo $title ?></title>
+    <link rel="icon" href="<?= $icon ?>">
     <link rel="stylesheet" href="style.css">
 </head>
