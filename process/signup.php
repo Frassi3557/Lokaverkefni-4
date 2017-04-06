@@ -17,7 +17,7 @@
         $statement->bindValue(':email', $email);
         $inserted = $statement->execute();	
         if($inserted){
-    echo 'Row inserted!<br>';
+    echo 'Skráður í kerfið!<br>';
 }
 	} catch (Exception $e) {
 		echo "Ekki tókst að skrá gögnin". "<br>" . $e->getMessage();
