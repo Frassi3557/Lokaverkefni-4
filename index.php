@@ -16,7 +16,7 @@
                     <label for="mail">Email</label>
                     <input type="email" name="email" required>
 
-                    <label for="lname">Password</label>
+                    <label for="pass">Password</label>
                     <input type="password" name="password" required>
 
                     <br><br>
