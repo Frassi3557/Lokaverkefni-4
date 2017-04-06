@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+  <?php require('includes/header.php'); ?>
+
     <div class="skrainn">
         <div class="log">
             <form action="process/signin.php" method="post">
