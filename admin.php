@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <?php require('includes/header.php'); ?>
     <form action="process/signout.php" method="post">
         <input type="submit">
     </form>

@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <?php require('includes/header.php'); ?>
     <form action="process/breytanafn.php" method="post"><br>
            Nýtt nafn<br>
         <input type="text" name="newname" required><br>
