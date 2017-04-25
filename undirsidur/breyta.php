@@ -1,9 +1,9 @@
-<?php require('includes/session.php'); ?>
+<?php require('../includes/session.php'); ?>
 <!DOCTYPE html>
 <html lang="">
-  <?php require('includes/head.php'); ?>
+  <?php require('../includes/head.php'); ?>
 <body>
-    <?php require('includes/header.php'); ?>
+    <?php require('../includes/header.php'); ?>
     <form action="../process/breytanafn.php" method="post"><br>
            Nýtt nafn<br>
         <input type="text" name="newname" required><br>
