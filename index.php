@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <?php require('includes/head.php'); ?>
-
+<body>
     <div class="skrainn">
         <div class="log">
             <form action="process/signin.php" method="post">
