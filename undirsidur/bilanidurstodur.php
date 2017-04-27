@@ -12,8 +12,8 @@
   // fáum php object 
   $json_object = json_decode($json);
 
-  print_r($json_object);
   /*
+  print_r($json_object);
    http://apis.is/car?number=OST00
     stdClass Object ( 
       [results] => Array (
@@ -34,3 +34,24 @@
   */
   }
 ?>
+
+<!DOCTYPE html>
+<html>
+  <?php require('../includes/head.php'); ?>
+<body>
+  <div>
+<?php foreach ($json_object->results as $value): ?>
+    <p id="type"><?php echo $value->type ?></p>
+    <p id="subType"><?php echo $value->subType ?></p>
+    <p id="registryNumber"><?php echo $value->registryNumber ?></p>
+    <p id="number"><?php echo $value->number ?></p>
+    <p id="factoryNumber"><?php echo $value->factoryNumber ?></p>
+    <p id="registeredAt"><?php echo $value->registeredAt ?></p>
+    <p id="pollution"><?php echo $value->pollution ?></p>
+    <p id="weight"><?php echo $value->weight ?></p>
+    <p id="status"><?php echo $value->status ?></p>
+    <p id="nextcheck"><?php echo $value->nextCheck ?></p>
+<?php endforeach; ?>  
+  </div>
+</body>
+  </html> 
