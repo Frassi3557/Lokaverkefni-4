@@ -11,6 +11,13 @@
 
   // fáum php object 
   $json_object = json_decode($json);
+  
+  $subType = $json_object->results[0]->subType;
+  $registeredAt = $json_object->results[0]->registeredAt;
+  $year = substr($registeredAt, -4);
+    
+  echo $year;
+  echo $subType;
 
   /*
   print_r($json_object);
@@ -53,5 +60,25 @@
     <p id="nextcheck"><?php echo $value->nextCheck ?></p>
 <?php endforeach; ?>  
   </div>
+<?php
+  $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=";
+  
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $sURL); 
+  curl_setopt($ch, CURLOPT_TIMEOUT, '1'); 
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: multipart/form-data',
+    'Ocp-Apim-Subscription-Key: 54795abe8ca14ef899cfb5749f360d47'
+  ));
+  $content = curl_exec($ch);
+  
+  echo $content;
+  
+  
+?>
 </body>
   </html> 
+
+
