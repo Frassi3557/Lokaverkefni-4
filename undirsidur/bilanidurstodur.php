@@ -43,7 +43,8 @@
     
     
     stdClass Object (
-      [_type] => Images [instrumentation] =>stdClass Object (
+      [_type] => Images 
+      [instrumentation] =>stdClass Object (
         [pageLoadPingUrl] => https://www.bingapis.com/api/ping/pageload?IG=1D144B176842402DAF35FE2FAC6365BA&CID=3303C2B9B6A761540A5EC8C8B74060E9&Type=Event.CPT&DATA=0 )
         [webSearchUrl] => https://www.bing.com/cr?IG=1D144B176842402DAF35FE2FAC6365BA&CID=3303C2B9B6A761540A5EC8C8B74060E9&rd=1&h=KBOVHi0UEz5E_dgIqPZm8H843bUxdrd4mebmVYWOl8s&v=1&r=https%3a%2f%2fwww.bing.com%2fimages%2fsearch%3fq%3d2016%2520PAJERO%26FORM%3dOIIARP&p=DevEx,5228.1 
         [totalEstimatedMatches] => 916 
@@ -64,16 +65,16 @@
 <body>
   <div>
       <?php foreach ($json_object->results as $value): ?>
-        <p id="type"><?php echo $value->type ?></p>
-        <p id="subType"><?php echo $value->subType ?></p>
-        <p id="registryNumber"><?php echo $value->registryNumber ?></p>
-        <p id="number"><?php echo $value->number ?></p>
-        <p id="factoryNumber"><?php echo $value->factoryNumber ?></p>
-        <p id="registeredAt"><?php echo $value->registeredAt ?></p>
-        <p id="pollution"><?php echo $value->pollution ?></p>
-        <p id="weight"><?php echo $value->weight ?></p>
-        <p id="status"><?php echo $value->status ?></p>
-        <p id="nextcheck"><?php echo $value->nextCheck ?></p>
+        <p id="type">Tegund: <?php echo $value->type ?></p>
+        <p id="subType">Undirgerð: <?php echo $value->subType ?></p>
+        <p id="registryNumber">Skráningarnr: <?php echo $value->registryNumber ?></p>
+        <p id="number">Fastamr: <?php echo $value->number ?></p>
+        <p id="factoryNumber">Verksmiðjunr: <?php echo $value->factoryNumber ?></p>
+        <p id="registeredAt">Fyrsta skráning: <?php echo $value->registeredAt ?></p>
+        <p id="pollution">C0<sub>2</sub> losun: <?php echo $value->pollution ?></p>
+        <p id="weight">Eiginþyngd: <?php echo $value->weight ?></p>
+        <p id="status">Staða: <?php echo $value->status ?></p>
+        <p id="nextcheck">Næsta skoðun: <?php echo $value->nextCheck ?></p>
       <?php endforeach; ?>  
   </div>
    
@@ -91,10 +92,12 @@
       $content = curl_exec($ch);
       $content = json_decode($content);
       //echo $content;
-      print_r($content);
+      //print_r($content);
     ?>  
   <div class="images">
-    <?php //echo $content->value[0]->contentUrl; ?>
+    <?php foreach ($content->value as $cValue): ?>
+        <img src="<?php echo $cValue->thumbnailUrl; ?>">
+      <?php endforeach; ?> 
   </div>
   
 </body>
