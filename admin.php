@@ -4,9 +4,12 @@
   <?php require('includes/head.php'); ?>
 <body>
     <?php require('includes/header.php'); ?>
-    <h1><?php echo "<h1> Velkominn " . $_SESSION['name'] . ". Hér er veðrið í dga.</h1>"; ?></h1>
+    <h1><?php echo "<h1> Velkominn " . $_SESSION['name'] . ". Hér er veðrið í dag.</h1>"; ?></h1>
     <br>
-    <h1 class="stadsetning"></h1>
+    <div class="vedur">
+        <h1 id="stadsetning"></h1>
+        <h2 id="dagsetning"></h2>
+    </div>
     <form action="process/signout.php" method="post">
         <input type="submit">
     </form>
