@@ -13,11 +13,9 @@
   $json_object = json_decode($json);
   
   $subType = $json_object->results[0]->subType;
+  $subType = str_replace(' ', '-', $subType);
   $registeredAt = $json_object->results[0]->registeredAt;
   $year = substr($registeredAt, -4);
-    
-  echo $year;
-  echo $subType;
 
   /*
   print_r($json_object);
