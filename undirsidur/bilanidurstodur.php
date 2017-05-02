@@ -61,6 +61,11 @@
 <html>
   <?php require('../includes/head.php'); ?>
 <body>
+  <form action="bilanidurstodur.php" method="post">
+        <label>Skráningarnr.</label>
+        <input type="text" name="numer" required>
+        <input type="submit" value="Leita">
+  </form>
   <div>
       <?php foreach ($json_object->results as $value): ?>
         <p id="type">Tegund: <?php echo $value->type ?></p>

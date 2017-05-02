@@ -11,7 +11,7 @@
         
         <br><br>
         
-        <input type="submit" value="SUBMIT">
+        <input type="submit" value="Leita">
       </form>
     </div>
   </div>
