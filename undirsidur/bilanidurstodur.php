@@ -59,7 +59,9 @@
 
 <!DOCTYPE html>
 <html>
-  <?php require('../includes/head.php'); ?>
+  <?php require('../includes/head.php'); 
+        include('../includes/header.php');
+  ?>
 <body>
   <form action="bilanidurstodur.php" method="post">
         <label>Skráningarnr.</label>
