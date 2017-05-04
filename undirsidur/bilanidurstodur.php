@@ -21,7 +21,7 @@
   //echo $propertyName; -> results / error
   $type = $json_object->results[0]->type;
   $type = preg_replace("/\([^)]+\)/","",$type);
-  $type = str_replace(' ', '', $type);
+  $type = str_replace(' ', '%20', $type);
   $registeredAt = $json_object->results[0]->registeredAt;
   $year = substr($registeredAt, -4);
     
