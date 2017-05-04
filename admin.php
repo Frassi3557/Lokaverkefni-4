@@ -9,6 +9,8 @@
     <div class="vedur">
         <h1 id="stadsetning"></h1>
         <h2 id="dagsetning"></h2>
+        <h2 id="vedurupp"></h2>
+        <h1 id="hiti"></h1>
     </div>
     <form action="process/signout.php" method="post">
         <input type="submit">
