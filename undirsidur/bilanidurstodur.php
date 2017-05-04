@@ -11,9 +11,9 @@
 
   // fáum php object 
   $json_object = json_decode($json);
-  
-  $subType = $json_object->results[0]->subType;
-  $subType = str_replace(' ', '-', $subType);
+  $type = $json_object->results[0]->type;
+  $type = preg_replace("/\([^)]+\)/","",$type);
+  $type = str_replace(' ', '', $type);
   $registeredAt = $json_object->results[0]->registeredAt;
   $year = substr($registeredAt, -4);
 
@@ -82,7 +82,7 @@
   </div>
    
     <?php
-      $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$year%20$subType";
+      $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$year%20$type";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $sURL); 
       curl_setopt($ch, CURLOPT_TIMEOUT, '1'); 
