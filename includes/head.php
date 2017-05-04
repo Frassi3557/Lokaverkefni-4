@@ -18,6 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?></title>
     <link rel="icon" href="<?= $icon ?>">
-    <link rel="stylesheet" href="/2t/0506992429/lokaverkefni-4/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>

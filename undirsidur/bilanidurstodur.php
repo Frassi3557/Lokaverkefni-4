@@ -11,20 +11,12 @@
 
   // fáum php object 
   $json_object = json_decode($json);
-  $propertyName = key(get_object_vars($json_object));
-  if($propertyName != "results") {
-      header("Location:bilaleit.php");
-      exit;
-  }
-    
-  else {
-  //echo $propertyName; -> results / error
   $type = $json_object->results[0]->type;
   $type = preg_replace("/\([^)]+\)/","",$type);
-  $type = str_replace(' ', '%20', $type);
+  $type = str_replace(' ', '', $type);
   $registeredAt = $json_object->results[0]->registeredAt;
   $year = substr($registeredAt, -4);
-    
+
   /*
   print_r($json_object);
    http://apis.is/car?number=OST00
@@ -62,6 +54,7 @@
           [datePublished] => 2017-03-16T10:35:00 
           [contentUrl] => http://www.bing.com/cr?IG=1D144B176842402DAF35FE2FAC6365BA&CID=3303C2B9B6A761540A5EC8C8B74060E9&rd=1&h=8YFuuwaYnGHsn-uca4lLG4EpGAK7g1clkPZxELiyV3E&v=1&r=http%3a%2f%2fpictures.topspeed.com%2fIMG%2fcrop%2f201508%2fmitsubishi-pajero-sp-22_1600x0w.jpg&p=DevEx,5008.1 
   */  
+  }
 ?>
 
 <!DOCTYPE html>
@@ -111,7 +104,7 @@
         <img src="<?php echo $cValue->thumbnailUrl; ?>">
       <?php endforeach; ?> 
   </div>
-  <?php } } ?>
+  
 </body>
   </html> 
 

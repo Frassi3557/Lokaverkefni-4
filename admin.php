@@ -13,9 +13,6 @@
         <h1 id="hiti"></h1>
         <div id="icon"></div>
     </div>
-    <form action="process/signout.php" method="post">
-        <input type="submit" value="Logout">
-    </form>
     <script src="java.js"></script>
 </body>
 </html>

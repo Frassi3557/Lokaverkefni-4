@@ -9,12 +9,34 @@ $.ajax({
   'dataType': 'json',
   'data': {'stations': '1,422'},
   'success': function(response) {
+		
+		
+		var d = new Date();
+		var n = d.getDay();
+		var h = d.getHours();
+		if(n < 10){
+    	n = "0" + n;
+    }
+		for (i = 0; i < response.results[0].forecast.count; i++) {
+			var str = response.results[0].forecast[i].ftime;
+			var res = str.substring(8, 10);
+			var timeres = str.substring(11, 13);
+    	if(res === n){
+				if(timeres === h){
+					dagsetning.innerHTML = response.results[0].forecast[i].ftime;
+				}
+			}
+		}
+		
+		 //ef result er reykjavík koma skilaboð
       if (response.results[0].name === "Reykjavík") {
           stadsetning.innerHTML = "Veður í Reykjavík yfir daginn";
       }
-      dagsetning.innerHTML = response.results[0].forecast[5].ftime;
+      //dagsetning.innerHTML = response.results[0].forecast[5].ftime;
       vedurupp.innerHTML = "Veðurlýsing yfir daginn: " + response.results[0].forecast[5].W;
       gradur.innerHTML = "Hiti yfir daginn: " + response.results[0].forecast[5].T + "°C";
+		
+			/* ef það er eitthvað sérstakt veður kemur sér mynd fyrir hvert*/
       if(response.results[0].forecast[5].W === "Heiðskírt")
       {
           mynd.innerHTML = "<img class='vedurmyndin' src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/421f0c16071075.562a500e6ddd4.gif'>";

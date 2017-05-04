@@ -1,9 +1,36 @@
+.logout{
+	background-color: black;
+	color: white;
+	width: 100%;
+	border-radius: 1em;
+	font-size: 3em;
+}
+.vedurmyndin{
+	width: 100%;
+}
 #vedur{
-    border: 2px solid red;
-    width: 40%;
+    width: 100%;
+    text-align: center;
+    background-color: #FFCC00;
+}
+
+
+/* min width 42em    */
+@media screen and (min-width: 42em) {
+  #vedur{
+    width: 50%;
     float: right;
     text-align: center;
     background-color: #FFCC00;
+}
+.logout{
+	background-color: black;
+	color: white;
+	width: auto;
+	border-radius: 1em;
+	font-size: 3em;
+	padding: .4em;
+	
 }
 /*********Form*********************/
 .skrainn{
@@ -48,4 +75,5 @@
 }
 .log input[type=submit]:active {
     background-color: #c30000;
+}
 }
