@@ -1,3 +1,10 @@
+#vedur{
+    border: 2px solid red;
+    width: 40%;
+    float: right;
+    text-align: center;
+    background-color: #FFCC00;
+}
 /*********Form*********************/
 .skrainn{
     width: 40%;
