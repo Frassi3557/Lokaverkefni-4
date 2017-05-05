@@ -8,7 +8,7 @@
     <br>
     <div id="vedur">
         <h1 id="stadsetning"></h1>
-        <h2 id="dagsetning"></h2>
+        <h1 id="dagsetning"></h1>
         <h2 id="vedurupp"></h2>
         <h1 id="hiti"></h1>
         <div id="icon"></div>
