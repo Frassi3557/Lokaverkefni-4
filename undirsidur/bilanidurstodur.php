@@ -25,7 +25,7 @@
         [0] => stdClass Object ( 
         [type] => MITSUBISHI - PAJERO (Svartur) 
         [subType] => PAJERO 
-        [color] => Svartur 
+        [color] => Svartur w
         [registryNumber] => OST00 
         [number] => OST00 
         [factoryNumber] => JMBLYV98WFJ402346
