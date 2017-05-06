@@ -65,10 +65,24 @@ $.ajax({
   }
 });
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    alert("Latitude: " + position.coords.latitude + 
+    " Longitude: " + position.coords.longitude);
+}
+
+
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
   	zoom: 13,
-  	center: {lat: 34.04924594193164, lng: -118.24104309082031}
+  	center: {lat: 64.1405625, lng: -21.933132500000056}
 	});
 
 	var trafficLayer = new google.maps.TrafficLayer();
