@@ -1,3 +1,8 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 .logout{
 	background-color: black;
 	color: white;
@@ -5,23 +10,30 @@
 	border-radius: 1em;
 	font-size: 3em;
 }
-.vedurmyndin{
+#map {
 	width: 100%;
+	height: 100%;
 }
 #vedur{
     width: 100%;
     text-align: center;
     background-color: #FFCC00;
+	height: 100%;
 }
-
+.vedurmyndin{
+	width: 100%;
+}
 
 /* min width 42em    */
 @media screen and (min-width: 42em) {
+	#map {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
   #vedur{
     width: 50%;
     float: right;
-    text-align: center;
-    background-color: #FFCC00;
 }
 .logout{
 	background-color: black;

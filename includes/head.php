@@ -22,4 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Finnur Ip addressu notanda -->
     <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+		<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe_1vVVeeZoUNAp-1tFIOTcWip1pgH8NM&callback=initMap">
+    </script>
 </head>
