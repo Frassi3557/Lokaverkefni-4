@@ -65,7 +65,7 @@ $.ajax({
   }
 });
 
-function getLocation() {
+/*function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else { 
@@ -77,9 +77,34 @@ function showPosition(position) {
     alert("Latitude: " + position.coords.latitude + 
     " Longitude: " + position.coords.longitude);
 }
-
-
+*/
+var map, infoWindow;
 function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 65.6885, lng: -18.1262},
+          zoom: 13
+        });
+				var trafficLayer = new google.maps.TrafficLayer();
+						trafficLayer.setMap(map);
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+/*function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
   	zoom: 13,
   	center: {lat: 64.1405625, lng: -21.933132500000056}
@@ -87,4 +112,4 @@ function initMap() {
 
 	var trafficLayer = new google.maps.TrafficLayer();
 	trafficLayer.setMap(map);
-}
+}*/
