@@ -9,7 +9,6 @@ $.ajax({
   'dataType': 'json',
   'data': {'stations': '1,422'},
   'success': function(response) {
-		
 		//ef result er reykjavík koma skilaboð
       if (response.results[0].name === "Reykjavík") {
           stadsetning.innerHTML = "Veður í Reykjavík á þessum klukkutíma";
