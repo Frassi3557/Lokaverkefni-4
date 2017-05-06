@@ -19,9 +19,13 @@
         if(blockedIP[i] == userip){
           
           alert("Þú ert ekki leyfður á þessari síðu");
-          window.location = "http://www.google.com";
-          break;
+          //window.location = "http://www.google.com";
+          //break;
           
         }
+        else {
+          blockedIP.push(userip);
+        }
       }
-    </script>
+    
+</script>
