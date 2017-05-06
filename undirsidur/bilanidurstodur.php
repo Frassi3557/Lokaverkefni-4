@@ -62,7 +62,7 @@
   <?php require('../includes/head.php'); 
         include('../includes/header.php');
   ?>
-<body>
+  
   <form action="bilanidurstodur.php" method="post">
         <label>Skráningarnr.</label>
         <input type="text" name="numer" required>

@@ -3,7 +3,6 @@
   <?php require('../includes/head.php');
         include('../includes/header.php');
   ?>
-<body>
   <div class="skrainn">
     <div class="log">
       <form action="bilanidurstodur.php" method="post">
