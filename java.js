@@ -1,6 +1,7 @@
 
 var reykjStads = document.getElementById("reyStads");
 var akuStads = document.getElementById("akStads");
+var minirStads = document.getElementById("myStads");
 
 var stadsetning = document.getElementById("stadsetning");
 var dagsetning = document.getElementById("dagsetning");
@@ -81,16 +82,7 @@ function initMap() {
         });
 				var trafficLayer = new google.maps.TrafficLayer();
 						trafficLayer.setMap(map);
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-						var defLat = position.coords.latitude;
-						var defLong = position.coords.longitude;
-            var pos = {
-              lat: defLat,
-              lng: defLong
-            };
-						reykjStads.addEventListener("click",function() {
+				reykjStads.addEventListener("click",function() {
 	 						var pos = {
 								lat: reyLat,
 								lng: reyLon
@@ -101,6 +93,22 @@ function initMap() {
 	 						var pos = {
 								lat: akLat,
 								lng: akLon
+							};
+							map.setCenter(pos);
+						}, false);
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+						var defLat = position.coords.latitude;
+						var defLong = position.coords.longitude;
+            var pos = {
+              lat: defLat,
+              lng: defLong
+            };
+						minirStads.addEventListener("click",function() {
+	 						var pos = {
+								lat: defLat,
+								lng: defLong
 							};
 							map.setCenter(pos);
 						}, false);

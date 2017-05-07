@@ -8,6 +8,7 @@
     <br>
 	<button id="reyStads">Reykjavík</button>
 	<button id="akStads">Akureyri</button>
+	<button id="myStads">Mitt Location(virkar ekki chrome)</button>
 		<div id="map"></div>
     <div id="vedur">
         <h1 id="stadsetning"></h1>
