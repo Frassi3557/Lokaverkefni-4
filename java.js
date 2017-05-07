@@ -78,7 +78,7 @@ var map, infoWindow;
 function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: reyLat, lng: reyLon},
-          zoom: 13
+          zoom: 12
         });
 				var trafficLayer = new google.maps.TrafficLayer();
 						trafficLayer.setMap(map);
