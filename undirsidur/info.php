@@ -21,28 +21,39 @@
       }
     </style>
   </head>
-  <body>
+  <?php include('../includes/header.php'); ?>
     <table id="GeoResults"></table>
  
       
-    <div id="map" style="width: 300px; height: 300px;"></div>
+    <div id="map"></div>
     <script type="text/javascript">
-      
      
       
       $(function() {
          $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
-            var table_body = "";
+           var info = [];
             $.each(data, function(k, v) {
                 console.log(k,v);
+              info.push(v);
             });
             var lat = data.lat;
             var lng = data.lon;
-        $("#map").googleMap({
-          zoom: 10, // Initial zoom level (optional)
-          coords: [lat, lng], // Map center (optional)
-          type: "ROADMAP" // Map type (optional)
-        });
+            console.log(info);
+          $("#map").googleMap();
+          $("#map").addMarker({  
+            zoom: 10, // Initial zoom level (optional)
+            coords: [lat, lng], // Map center (optional)
+            type: "ROADMAP", // Map type (optional)
+            title: 'Staðsetning þín(gróflega)',
+            text: 'Upplýsingar um þig <br> <br>' +
+            'Land: ' + info[2] + '<br>' +
+            'Borg: ' + info[1] + '<br>' +
+            'ISP: ' + info[4] + '<br>' +
+            'IP-tala: ' + info[8] + '<br>' +
+            'Svæði: ' + info[10] + '<br>' +
+            'Tímabelti: ' + info[12] + '<br>' +
+            'Póstfang(gróflega): ' + info[13] + '<br>'
+          });
         });
       })
     </script>
