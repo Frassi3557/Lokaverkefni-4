@@ -1,5 +1,6 @@
 
 var reykjStads = document.getElementById("reyStads");
+var akuStads = document.getElementById("akStads");
 
 var stadsetning = document.getElementById("stadsetning");
 var dagsetning = document.getElementById("dagsetning");
@@ -89,10 +90,17 @@ function initMap() {
               lat: defLat,
               lng: defLong
             };
-						reykjStads.addEventListener("click",function(initMap) {
+						reykjStads.addEventListener("click",function() {
 	 						var pos = {
 								lat: reyLat,
 								lng: reyLon
+							};
+							map.setCenter(pos);
+						}, false);
+						akuStads.addEventListener("click",function() {
+	 						var pos = {
+								lat: akLat,
+								lng: akLon
 							};
 							map.setCenter(pos);
 						}, false);
