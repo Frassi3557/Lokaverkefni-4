@@ -1,5 +1,5 @@
 
-var x = document.getElementById("demo11");
+var reykjStads = document.getElementById("reyStads");
 
 var stadsetning = document.getElementById("stadsetning");
 var dagsetning = document.getElementById("dagsetning");
@@ -65,23 +65,17 @@ $.ajax({
   }
 });
 
-/*function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
+var akLat = 65.6885;
+var akLon = -18.1262;
+var akZoom = 10;
+var reyLat = 64.1265;
+var reyLon = -21.8174;
+var reyZoom = 10;
 
-function showPosition(position) {
-    alert("Latitude: " + position.coords.latitude + 
-    " Longitude: " + position.coords.longitude);
-}
-*/
 var map, infoWindow;
 function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 65.6885, lng: -18.1262},
+          center: {lat: reyLat, lng: reyLon},
           zoom: 13
         });
 				var trafficLayer = new google.maps.TrafficLayer();
@@ -89,11 +83,20 @@ function initMap() {
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
+						var defLat = position.coords.latitude;
+						var defLong = position.coords.longitude;
             var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
+              lat: defLat,
+              lng: defLong
             };
-
+						reykjStads.addEventListener("click",function(initMap) {
+	 						var pos = {
+								lat: reyLat,
+								lng: reyLon
+							};
+							map.setCenter(pos);
+						}, false);
+					
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -102,14 +105,4 @@ function initMap() {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-      }
-
-/*function initMap() {
-	var map = new google.maps.Map(document.getElementById('map'), {
-  	zoom: 13,
-  	center: {lat: 64.1405625, lng: -21.933132500000056}
-	});
-
-	var trafficLayer = new google.maps.TrafficLayer();
-	trafficLayer.setMap(map);
-}*/
+}
