@@ -24,7 +24,7 @@
 		echo "Ekki tókst að skrá gögnin". "<br>" . $e->getMessage();
 	}
       
-    header("Refresh: 2; URL=../admin.php");
+    header("Refresh: 2; URL=../index.php");
   }
 else{
     header("Location:../index.php");
