@@ -3,8 +3,11 @@ var reykjStads = document.getElementById("reyStads");
 var akuStads = document.getElementById("akStads");
 var minirStads = document.getElementById("myStads");
 
+var nr = 0;
+
 var stadsetning = document.getElementById("stadsetning");
 var dagsetning = document.getElementById("dagsetning");
+var klukka = document.getElementById("klukka");
 var vedurupp = document.getElementById("vedurupp");
 var gradur = document.getElementById("hiti");
 var mynd = document.getElementById("icon");
@@ -14,7 +17,6 @@ $.ajax({
   'dataType': 'json',
   'data': {'stations': '1,422'},
   'success': function(response) {
-		
 		var d = new Date();
 		var n = d.getDate();
 		var h = d.getHours();
@@ -23,15 +25,20 @@ $.ajax({
     }
 		var i;
 		for (i = 0; i < response.results[0].forecast.length; i++) {
-			var str = response.results[0].forecast[i].ftime;
+			var str = response.results[0].forecast[0].ftime;
 			var res = str.substring(8, 10);
 			var timeres = str.substring(11, 13);
-            var text;
+			var manudur = str.substring(5, 7);
+			var ollklukka = str.substring(11, 16);
+			var tvothus = str.substring(0, 4);
+			var dagsetninar = res + "/" + manudur + "/" + tvothus;
     	if(res == n){
 				if(timeres == h){
 					//text += res + " " + n + "<br>" + timeres + " " + h + "<br>";
                     //demo2.innerHTML =  response.results[0].forecast[i].ftime;
-                    dagsetning.innerHTML = response.results[0].forecast[i].ftime;
+					stadsetning.innerHTML = "Veðrið í " + response.results[nr].name;
+          dagsetning.innerHTML = dagsetninar;
+					klukka.innerHTML = ollklukka;
 					vedurupp.innerHTML = "Veðurlýsing yfir daginn: " + response.results[0].forecast[i].W;
 					gradur.innerHTML = "Hiti yfir daginn: " + response.results[0].forecast[i].T + "°C";
 
@@ -87,6 +94,7 @@ function initMap() {
 								lng: reyLon
 							};
 							map.setCenter(pos);
+							nr = 0;
 						}, false);
 						akuStads.addEventListener("click",function() {
 	 						var pos = {
@@ -94,6 +102,7 @@ function initMap() {
 								lng: akLon
 							};
 							map.setCenter(pos);
+							nr = 1;
 						}, false);
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
