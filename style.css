@@ -42,7 +42,14 @@
 .log input[type=submit]:active {
     background-color: #c30000;
 }
-
+/****Tonleikar********/
+/*.tonleikarDiv{
+	background-color: #d3d3d3;
+	text-align: center;
+}
+.tonleikarDiv img{
+	width: 80%;
+}*/
 
 /*form endar*/
 html, body {
@@ -95,6 +102,14 @@ html, body {
 		padding: .4em;
 
 	}
+	/****Tonleikar********/
+	/*.tonleikarDiv{
+		width: 30%;
+		float: left;
+		height: 100%;
+		margin: 1em;
+		border-radius: 1em;
+	}*/
 	/*********Form*********************/
 	.skrainn{
 			width: 40%;
