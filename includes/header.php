@@ -1,14 +1,16 @@
-<body>
-  <ul>
+	<header>
+		<nav class="menu">
+  <ul class="topmenu">
     <li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/undirsidur/breyta.php">Breyta Upplýsingum</a></li>
     <li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/undirsidur/bilaleit.php">Bifreiðaleit</a></li>
 		<li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/undirsidur/tonleikar.php">Tónleikar</a></li>
     <li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/undirsidur/info.php">Um Mig</a></li>
     <li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/admin.php">Heim</a></li>
+    <li><a href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/process/signout.php">Útskrá</a></li>
   </ul>
-	<form action="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/process/signout.php" method="post">
-        <input class="logout" type="submit" value="Logout">
-    </form>
+			</nav>
+	</header>
+<body>
   
   <script>
     var blockedIP = new Array();
@@ -58,7 +60,7 @@
     function checkCookie() {
       var ipaddress = getCookie("ip");
       if (ipaddress != "") {
-        document.getElementById("welcometext").innerHTML+= "ip-talan þín er: " + ipaddress;
+        document.getElementById("welcometext").innerHTML+= "Velkomin/n aftur!";
       } else {
         user = userip;
         if (user != "" && user != null) {

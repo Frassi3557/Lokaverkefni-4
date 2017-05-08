@@ -1,3 +1,44 @@
+* {
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif;
+}
+header {
+  width: 100%;
+  background-color: #E0E0E0;
+  position: fixed;
+  top: 0;
+	left: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1001;
+}
+nav {
+		height: 3.4em;
+	}
+.topmenu {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #E0E0E0;
+  }
+  .topmenu li {
+    display: inline-block;
+    list-style-type: none;
+    padding: .6em 1em;
+    font-size: 1.4em;
+  }
+  .topmenu li{
+    color: #404040;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .5s ease, background-color .4s ease;
+  }
+  .topmenu li:hover{
+    background-color: #000;
+    color: #fff;
+    transition: color 1s ease, background-color .8s ease;
+	}
+
 /*********Form*********************/
 .skrainn{
     width: 100%;
@@ -56,6 +97,9 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+body {
+	margin-top: 3.4em;
 }
 .logout{
 	background-color: black;

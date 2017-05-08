@@ -19,6 +19,7 @@
     <title><?php echo $title ?></title>
     <link rel="icon" href="<?= $icon ?>">
     <link rel="stylesheet" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Finnur Ip addressu notanda -->
     <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
