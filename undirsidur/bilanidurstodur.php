@@ -9,7 +9,7 @@
   // JSON sótt úr API.
   $json = file_get_contents($url);
 
-  // fáum php object 
+  // Fæ PHP object
   $json_object = json_decode($json);
   $type = $json_object->results[0]->type;
   $type = preg_replace("/\([^)]+\)/","",$type);
@@ -37,8 +37,6 @@
         ) 
       ) 
     )
-    
-    
     
     stdClass Object (
       [_type] => Images 
@@ -69,6 +67,7 @@
         <input type="submit" value="Leita">
   </form>
   <div>
+		<!-- Skrifa út upplýsingar um bifreið -->
       <?php foreach ($json_object->results as $value): ?>
         <p id="type">Tegund: <?php echo $value->type ?></p>
         <p id="subType">Undirgerð: <?php echo $value->subType ?></p>
@@ -82,7 +81,7 @@
         <p id="nextcheck">Næsta skoðun: <?php echo $value->nextCheck ?></p>
       <?php endforeach; ?>  
   </div>
-   
+   <!-- Tengist Bing Images API -->
     <?php
       $sURL = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=$year%20$type";
       $ch = curl_init();
@@ -99,6 +98,7 @@
       //echo $content;
       //print_r($content);
     ?>  
+	<!-- Birti myndir af bílnum í gegnum Bing API -->
   <div class="images">
     <?php foreach ($content->value as $cValue): ?>
         <img src="<?php echo $cValue->thumbnailUrl; ?>">
