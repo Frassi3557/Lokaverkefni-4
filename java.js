@@ -16,7 +16,7 @@ $.ajax({
   'success': function(response) {
 		//ef result er reykjavík koma skilaboð
       if (response.results[0].name === "Reykjavík") {
-          stadsetning.innerHTML = "Veður í Reykjavík á þessum klukkutíma";
+          stadsetning.innerHTML = "Veður í Reykjavík á í dag";
       }
 		
 		var d = new Date();
@@ -78,7 +78,7 @@ var map, infoWindow;
 function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: reyLat, lng: reyLon},
-          zoom: 12
+          zoom: 13
         });
 				var trafficLayer = new google.maps.TrafficLayer();
 						trafficLayer.setMap(map);
