@@ -96,7 +96,12 @@ nav {
 .tonleikarDiv img{
 	width: 80%;
 }
-
+/****gengi********/
+.gengiDiv{
+	background-color: #ffffff;
+	text-align: center;
+	width: 100%;
+}
 /*form endar*/
 html, body {
   height: 100%;

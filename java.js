@@ -5,6 +5,64 @@ var minirStads = document.getElementById("myStads");
 
 var nr = 0;
 
+var akLat = 65.6885;
+var akLon = -18.1262;
+var akZoom = 10;
+var reyLat = 64.1265;
+var reyLon = -21.8174;
+var reyZoom = 10;
+
+var map, infoWindow;
+function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: reyLat, lng: reyLon},
+          zoom: 13
+        });
+				var trafficLayer = new google.maps.TrafficLayer();
+						trafficLayer.setMap(map);
+				reykjStads.addEventListener("click",function() {
+	 						var pos = {
+								lat: reyLat,
+								lng: reyLon
+							};
+							map.setCenter(pos);
+							nr = 0;
+						}, false);
+						akuStads.addEventListener("click",function() {
+	 						var pos = {
+								lat: akLat,
+								lng: akLon
+							};
+							map.setCenter(pos);
+							nr = 1;
+						}, false);
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+						var defLat = position.coords.latitude;
+						var defLong = position.coords.longitude;
+            var pos = {
+              lat: defLat,
+              lng: defLong
+            };
+						minirStads.addEventListener("click",function() {
+	 						var pos = {
+								lat: defLat,
+								lng: defLong
+							};
+							map.setCenter(pos);
+						}, false);
+					
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+}
+
 var stadsetning = document.getElementById("stadsetning");
 var dagsetning = document.getElementById("dagsetning");
 var klukka = document.getElementById("klukka");
@@ -72,61 +130,3 @@ $.ajax({
 		} 
   }
 });
-
-var akLat = 65.6885;
-var akLon = -18.1262;
-var akZoom = 10;
-var reyLat = 64.1265;
-var reyLon = -21.8174;
-var reyZoom = 10;
-
-var map, infoWindow;
-function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: reyLat, lng: reyLon},
-          zoom: 13
-        });
-				var trafficLayer = new google.maps.TrafficLayer();
-						trafficLayer.setMap(map);
-				reykjStads.addEventListener("click",function() {
-	 						var pos = {
-								lat: reyLat,
-								lng: reyLon
-							};
-							map.setCenter(pos);
-							nr = 0;
-						}, false);
-						akuStads.addEventListener("click",function() {
-	 						var pos = {
-								lat: akLat,
-								lng: akLon
-							};
-							map.setCenter(pos);
-							nr = 1;
-						}, false);
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-						var defLat = position.coords.latitude;
-						var defLong = position.coords.longitude;
-            var pos = {
-              lat: defLat,
-              lng: defLong
-            };
-						minirStads.addEventListener("click",function() {
-	 						var pos = {
-								lat: defLat,
-								lng: defLong
-							};
-							map.setCenter(pos);
-						}, false);
-					
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-}
