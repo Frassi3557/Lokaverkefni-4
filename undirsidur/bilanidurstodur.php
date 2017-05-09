@@ -101,7 +101,7 @@
 	<!-- Birti myndir af bílnum í gegnum Bing API -->
   <div class="images">
     <?php foreach ($content->value as $cValue): ?>
-        <img src="<?php echo $cValue->thumbnailUrl; ?>">
+        <img class="bilamynd" src="<?php echo $cValue->thumbnailUrl; ?>">
       <?php endforeach; ?> 
   </div>
   

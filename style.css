@@ -38,7 +38,12 @@ nav {
     color: #fff;
     transition: color 1s ease, background-color .8s ease;
 	}
-
+/****bilamynd*******/
+.bilamynd{
+	width: 80%;
+	text-align: center;
+	border-radius: 1em;
+}
 /*********Form*********************/
 .skrainn{
     width: 100%;
@@ -153,6 +158,11 @@ body {
 		height: 100%;
 		margin: 1em;
 		border-radius: 1em;
+	}
+	/*********bilaleit***********/
+	.bilamynd{
+		width: 30%;
+		margin: 1em;
 	}
 	/*********Form*********************/
 	.skrainn{

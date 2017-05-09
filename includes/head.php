@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?></title>
     <link rel="icon" href="<?= $icon ?>">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://tsuts.tskoli.is/2t/1811992029/onn4/lokaverkefni/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Finnur Ip addressu notanda -->
