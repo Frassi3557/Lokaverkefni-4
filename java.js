@@ -25,7 +25,7 @@ $.ajax({
     }
 		var i;
 		for (i = 0; i < response.results[0].forecast.length; i++) {
-			var str = response.results[0].forecast[0].ftime;
+			var str = response.results[0].forecast[i].ftime;
 			var res = str.substring(8, 10);
 			var timeres = str.substring(11, 13);
 			var manudur = str.substring(5, 7);
@@ -39,8 +39,8 @@ $.ajax({
 					stadsetning.innerHTML = "Veðrið í " + response.results[nr].name;
           dagsetning.innerHTML = dagsetninar;
 					klukka.innerHTML = ollklukka;
-					vedurupp.innerHTML = "Veðurlýsing yfir daginn: " + response.results[0].forecast[i].W;
-					gradur.innerHTML = "Hiti yfir daginn: " + response.results[0].forecast[i].T + "°C";
+					vedurupp.innerHTML = "Veðurlýsing: " + response.results[0].forecast[i].W;
+					gradur.innerHTML = "Hiti: " + response.results[0].forecast[i].T + "°C";
 
 					/* ef það er eitthvað sérstakt veður kemur sér mynd fyrir hvert*/
 					if(response.results[0].forecast[i].W === "Heiðskírt")

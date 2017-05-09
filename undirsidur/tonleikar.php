@@ -13,6 +13,10 @@
 	$dateOfShow = $json_object->results[0]->dateOfShow;
   $dags = substr($dateOfShow, 0, -9);
 	$klukk = substr($dateOfShow, 11, -3);
+	$fyrstutveir = substr($dateOfShow, 8, 2);
+	$manudur = substr($dateOfShow, 5, 2);
+	$tvothus = substr($dateOfShow, 0, 4);
+	$dagsetninar = $fyrstutveir."/".$manudur."/" .$tvothus;
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +33,7 @@
       <?php foreach ($json_object->results as $value): ?>
 				<div class="tonleikarDiv">
 					<h1>Event: <?php echo $value->eventDateName ?></h1>
-					<h1>Dags: <?php echo $dags ?></h1>
+					<h1>Dags: <?php echo $dagsetninar ?></h1>
 					<h1>Klukkan: <?php echo $klukk ?></h1>
 					<h2>Flytjendur: <?php echo $value->userGroupName ?></h1>
 					<h2>Nafn á viðburði: <?php echo $value->name ?></h1>
